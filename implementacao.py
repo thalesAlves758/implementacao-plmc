@@ -325,8 +325,9 @@ for _ in range(tamanhoPopulacao):
     fazendasCobertas = 0
     
     while(fazendasCobertas < numFazendas):
-        fazenda = random.randint(0, numFazendas - 1)
-        
+        antenasDisponiveis = set(range(numFazendas)) - set(solucao)
+        fazenda = random.choice(list(antenasDisponiveis))
+                
         coberturaAtual = calculaCobertura(solucao + [fazenda], numFazendas, distanciasFazendas, coberturaAntena)
         
         if coberturaAtual > fazendasCobertas:
