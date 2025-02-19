@@ -74,15 +74,13 @@ def calculaAptidao(solucao, distanciasFazendas, numFazendas, coberturaAntena):
         float - razão entre a redundancia (cobertura) e a quantidade de antenas
     """
     
-    redundancia = calculaCobertura(solucao, numFazendas, distanciasFazendas, coberturaAntena)
-    """
     redundancia = 0
     
     for fazendaAntena in solucao:
         for posicaoFazenda in range(numFazendas):
             if distanciasFazendas[fazendaAntena][posicaoFazenda] <= coberturaAntena:
                 redundancia += 1
-    """
+    
     
     return redundancia/len(solucao)
 
@@ -317,7 +315,7 @@ melhorAptidao = 0
 melhorSolucao = None
 
 vezesManteveAptidao = 0
-maximaVezesManteveAptidao = 50
+maximaVezesManteveAptidao = 10
 
 # Gerando a população inicial
 for _ in range(tamanhoPopulacao):
